@@ -51,6 +51,14 @@ open Glamor;
         ]
     ]
     ```
+    
+You can also combine stylings with a class names. For example if you want to use 
+some class from third party libraries, like Bootstrap, and add your own classes, or just 
+add a classname for test purposes along with glamor styles:
+
+     ```reason
+     <div className=("btn " ^ css [color "red"]) />
+     ```
 
 You can isolate inclusion of the `Glamor` namespace in the following way:
 
