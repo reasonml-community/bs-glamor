@@ -63,6 +63,55 @@ The result of the `css` function can be assigned to a class name, e.g. in JSX:
 ```reason
 <div className=(css [color "red"]) />
 ```
+### Merging css rules
+
+You can merge css rules using `merge`
+
+
+```
+let text_primary = css [ color "indigo" ];
+let small = css [fontSize "10px"];
+
+
+<p  className=(merge [text_primary, small])> ...
+```
+
+glamor will make sure that rules are merged in the correct order, managing nesting and precedence for you.
+
+
+### Global css
+ You can defined global css rules with `global`
+
+ ```
+ Glamor.(global "body" [margin "0px"]);
+
+ Glamor.(global "h1, h2, h3" [color "palegoldenrod"]);
+
+ ```
+
+## Keyframes
+
+define animation keyframes;
+
+```
+let bounce = Glamor.keyframes [
+  ("0%": [transform "scale(0.1)",  opacity "0"]),
+  ("60%": [transform "scale(1.2)",  opacity "1"]),
+  ("100%": [transform "scale(1)"])
+];
+let styles = css [
+    animationName bounce,
+    animationDuration "2s",
+    width "50px",
+    height "50px",
+    backgroundColor "red"
+];
+
+// ...
+<div className=styles>
+  bounce!
+</div>
+```
 
 ## Example
 

@@ -1,6 +1,14 @@
 type styleObj;
-
 external makeCSS : styleObj => string = "css" [@@bs.module "glamor"];
+external makeGlobalCSS : string => styleObj => unit = "global" [@@bs.scope "css"] [@@bs.module "glamor"];
+external makeKeyFrames : Js.Dict.t styleObj => string = "keyframes" [@@bs.scope "css"] [@@bs.module "glamor"];
+let merge : list string => string = [%bs.raw {|
+    function (styles) {
+        const glamor = require('glamor');
+        return glamor.css.apply(glamor, styles)
+    }
+|}];
+
 
 let addObjToStyles: styleObj => string => styleObj => styleObj = [%bs.raw
   {|
@@ -48,6 +56,9 @@ and declarationsToObj decls => List.fold_left addDeclaration emptyObj decls;
 
 let css decls => makeCSS (declarationsToObj decls);
 
+let global selector declarations => makeGlobalCSS selector (declarationsToObj declarations);
+
+let keyframes frames => makeKeyFrames (frames |> List.map (fun (k, v) => (k, declarationsToObj v)) |> Js.Dict.fromList);
 /*
    ==============
    CSS properties
@@ -622,7 +633,7 @@ let animationDelay v => Property "animationDelay" v;
 
 let animationDirection v => Property "animationDirection" v;
 
-let anumationDuration v => Property "anumationDuration" v;
+let animationDuration v => Property "animationDuration" v;
 
 let animationFillMode v => Property "animationFillMode" v;
 
