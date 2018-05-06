@@ -72,8 +72,7 @@ for testing purposes along with glamor styles:
 <div className=("btn " ^ css([color("red")])) />
 ```
 
-
-### Merging CSS rules
+### Merging CSS rules
 
 You can merge CSS rules using `merge`:
 
@@ -95,8 +94,7 @@ glamor will make sure that rules are merged in the correct order, managing nesti
  Glamor.(global("h1, h2, h3", [color("palegoldenrod")]));
  ```
 
-
-#### Keyframes
+### Keyframes
 
 Define animation keyframes:
 
