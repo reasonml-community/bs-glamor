@@ -1,6 +1,6 @@
 # bs-glamor – [BuckleScript](https://github.com/bucklescript/bucklescript) bindings for [glamor](https://github.com/threepointone/glamor)
 
-The API is still **experimental**. Only the `css` function from glamor is exposed (with its result slightly incorrectly typed as a `string`); no other functions such as `renderStatic` are supported yet.
+The API is still **experimental**. Only a few functions from glamor such as `css` and `global` are exposed; other functions such as `renderStatic` are not supported yet.
 
 ## Installation
 
@@ -72,9 +72,10 @@ for testing purposes along with glamor styles:
 <div className=("btn " ^ css([color("red")])) />
 ```
 
-### Merging css rules
 
-You can merge css rules using `merge`:
+### Merging CSS rules
+
+You can merge CSS rules using `merge`:
 
 ```reason
 let text_primary = css([color("indigo")]);
@@ -94,7 +95,8 @@ glamor will make sure that rules are merged in the correct order, managing nesti
  Glamor.(global("h1, h2, h3", [color("palegoldenrod")]));
  ```
 
-## Keyframes
+
+#### Keyframes
 
 Define animation keyframes:
 
