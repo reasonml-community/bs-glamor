@@ -98,7 +98,7 @@ glamor will make sure that rules are merged in the correct order, managing nesti
 
 Define animation keyframes:
 
-```
+```reason
 let bounce = Glamor.keyframes([
   ("0%": [transform("scale(0.1)"), opacity("0")]),
   ("60%": [transform("scale(1.2)"), opacity("1")]),
