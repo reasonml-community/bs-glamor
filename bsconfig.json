@@ -1,5 +1,6 @@
 {
   "name": "bs-glamor",
+  "refmt": 3,
   "bs-dev-dependencies": [
     "bs-jest"
   ],

@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "bs-jest": "^0.1.0",
-    "bs-platform": "^1.6.0"
+    "bs-platform": "^3.0.0"
   },
   "jest": {
     "roots": [
