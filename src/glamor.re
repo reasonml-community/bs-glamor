@@ -612,7 +612,7 @@ let gridRowStart = v => Property("gridRowStart", v);
 
 let gridTemplate = v => Property("gridTemplate", v);
 
-let gridTempalteAreas = v => Property("gridTempalteAreas", v);
+let gridTemplateAreas = v => Property("gridTemplateAreas", v);
 
 let gridTemplateColumns = v => Property("gridTemplateColumns", v);
 
