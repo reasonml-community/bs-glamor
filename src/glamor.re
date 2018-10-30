@@ -11,7 +11,7 @@ external makeKeyFrames : Js.Dict.t(styleObj) => string = "keyframes";
 let merge: list(string) => string = [%bs.raw
   {|
        function (styles) {
-           const glamor = require('glamor');
+           var glamor = require('glamor');
            return glamor.css.apply(glamor, styles)
        }
    |}
