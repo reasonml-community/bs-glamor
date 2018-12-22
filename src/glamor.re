@@ -37,7 +37,7 @@ let addStringToStyles: (styleObj, string, string) => styleObj = [%bs.raw
     |}
 ];
 
-let createEmptyObj: unit => styleObj = [%bs.raw
+let createEmptyObj: (. unit) => styleObj = [%bs.raw
   {|
             function () {
                 return {};
@@ -45,7 +45,7 @@ let createEmptyObj: unit => styleObj = [%bs.raw
     |}
 ];
 
-let emptyObj = createEmptyObj();
+let emptyObj = createEmptyObj(.);
 
 type declaration =
   | Nothing
